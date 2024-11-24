@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="header">
+      <h2>User Details</h2>
+      <button class="btn btn-secondary" (click)="goBack()">Back to List</button>
+    </div>
+    <div class="details-card">
+      <p><strong>First Name:</strong> {{ user.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ user.lastName }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+      <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+      <p><strong>Age:</strong> {{ user.age }}</p>
+      <p><strong>Address 1:</strong> {{ user.address1 }}</p>
+      <p><strong>Address 2:</strong> {{ user.address2 || 'N/A' }}</p>
+      <p><strong>City:</strong> {{ user.city }}</p>
+      <p><strong>State:</strong> {{ user.state }}</p>
+      <p><strong>Zip:</strong> {{ user.zip }}</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-warning" (click)="edit()">Edit</button>
+    </div>
+  </div>
+  

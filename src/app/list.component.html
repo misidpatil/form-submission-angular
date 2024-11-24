@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="header">
+      <h2>User List</h2>
+      <button class="btn btn-primary" routerLink="/create">Create New User</button>
+    </div>
+    <div *ngIf="users.length > 0; else noUsers">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index" (click)="navigateToDetails(i)" class="clickable-row">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noUsers>
+      <div class="no-users">
+        <p>No users available. Please add a user by clicking the button above.</p>
+      </div>
+    </ng-template>
+  </div>  
